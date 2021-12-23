@@ -1,4 +1,4 @@
 package co.com.sofka.Curso.commands;
 
-public class ModificarMetricaCurso {
+public class ModificarTemaEvaluacion {
 }
