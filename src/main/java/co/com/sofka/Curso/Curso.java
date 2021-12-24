@@ -5,6 +5,7 @@ import co.com.sofka.Curso.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -13,8 +14,8 @@ public class Curso  extends AggregateEvent<CursoId> {
     protected ProfesorId profesorId;
     protected Titulo titulo;
     protected Descripcion descripcion;
-    protected Set<Seccion> secciones;
-    protected Set<Evaluacion> evaluaciones;
+    protected HashSet<Seccion> secciones;
+    protected HashSet<Evaluacion> evaluaciones;
 
     public Curso(CursoId entityId, ProfesorId profesorId, Titulo titulo, Descripcion descripcion) {
         super(entityId);
@@ -34,43 +35,43 @@ public class Curso  extends AggregateEvent<CursoId> {
         return curso;
     }
 
-    public void AgregarSeccion(SeccionId seccionId, TituloSeccion tituloSeccion, DescripcionSeccion descripcionSeccion){
+    public void agregarSeccion(SeccionId seccionId, TituloSeccion tituloSeccion, DescripcionSeccion descripcionSeccion){
         appendChange(new SeccionAgregada(seccionId, tituloSeccion, descripcionSeccion)).apply();
     }
 
-    public void CrearProfesor(ProfesorId profesorId, NombreProfesor nombreProfesor){
+    public void crearProfesor(ProfesorId profesorId, NombreProfesor nombreProfesor){
         appendChange(new ProfesorCreado(profesorId, nombreProfesor)).apply();
     }
 
-    public void CrearEvaluacion(EvaluacionId evaluacionId, TemaEvaluacion temaEvaluacion, MetricaEvaluacion metricaEvaluacion){
+    public void crearEvaluacion(EvaluacionId evaluacionId, TemaEvaluacion temaEvaluacion, MetricaEvaluacion metricaEvaluacion){
         appendChange(new EvaluacionCreada(evaluacionId, temaEvaluacion, metricaEvaluacion)).apply();
     }
 
-    public void ModificarTituloCurso(CursoId cursoId, Titulo titulo){
+    public void modificarTituloCurso(CursoId cursoId, Titulo titulo){
         appendChange(new TituloCursoModificado(cursoId, titulo)).apply();
     }
 
-    public void ModificarDescripcionCurso(CursoId cursoId, Descripcion descripcion){
+    public void modificarDescripcionCurso(CursoId cursoId, Descripcion descripcion){
         appendChange(new DescripcionCursoModificada(cursoId, descripcion)).apply();
     }
 
-    public void ModificarMetricaEvaluacion(EvaluacionId evaluacionId, MetricaEvaluacion metricaEvaluacion){
+    public void modificarMetricaEvaluacion(EvaluacionId evaluacionId, MetricaEvaluacion metricaEvaluacion){
         appendChange(new MetricaEvaluacionModificada(evaluacionId, metricaEvaluacion)).apply();
     }
 
-    public void ModificarTemaEvaluacion(EvaluacionId evaluacionId, TemaEvaluacion temaEvaluacion){
+    public void modificarTemaEvaluacion(EvaluacionId evaluacionId, TemaEvaluacion temaEvaluacion){
         appendChange(new TemaEvaluacionModificado(evaluacionId, temaEvaluacion)).apply();
     }
 
-    public void ModificarNombreProfesor(ProfesorId profesorId, NombreProfesor nombreProfesor){
+    public void modificarNombreProfesor(ProfesorId profesorId, NombreProfesor nombreProfesor){
         appendChange(new NombreProfesorModificado(profesorId, nombreProfesor)).apply();
     }
 
-    public void ModificarTituloSeccion(SeccionId seccionId, TituloSeccion tituloSeccion){
+    public void modificarTituloSeccion(SeccionId seccionId, TituloSeccion tituloSeccion){
         appendChange(new TituloSeccionModificada(seccionId, tituloSeccion)).apply();
     }
 
-    public void ModificarDescripcionSeccion(SeccionId seccionId, DescripcionSeccion descripcionSeccion){
+    public void modificarDescripcionSeccion(SeccionId seccionId, DescripcionSeccion descripcionSeccion){
         appendChange(new DescripcionSeccionModificada(seccionId, descripcionSeccion)).apply();
     }
 
@@ -82,7 +83,7 @@ public class Curso  extends AggregateEvent<CursoId> {
     }
 
     public Optional<Evaluacion> getEvaluacionPorId(EvaluacionId evaluacionId){
-        return secciones
+        return evaluaciones
                 .stream()
                 .filter(evaluacion -> evaluacion.identity().equals(evaluacionId))
                 .findFirst();

@@ -1,4 +1,30 @@
 package co.com.sofka.Curso.commands;
 
-public class ModificarMetricaEvaluacion {
+import co.com.sofka.Curso.values.CursoId;
+import co.com.sofka.Curso.values.EvaluacionId;
+import co.com.sofka.Curso.values.MetricaEvaluacion;
+import co.com.sofka.domain.generic.Command;
+
+public class ModificarMetricaEvaluacion extends Command {
+    private final CursoId cursoId;
+    private final EvaluacionId evaluacionId;
+    private final MetricaEvaluacion metricaEvaluacion;
+
+    public ModificarMetricaEvaluacion(CursoId cursoId, EvaluacionId evaluacionId, MetricaEvaluacion metricaEvaluacion) {
+        this.cursoId = cursoId;
+        this.evaluacionId = evaluacionId;
+        this.metricaEvaluacion = metricaEvaluacion;
+    }
+
+    public CursoId getCursoId() {
+        return cursoId;
+    }
+
+    public EvaluacionId getEvaluacionId() {
+        return evaluacionId;
+    }
+
+    public MetricaEvaluacion getMetricaEvaluacion() {
+        return metricaEvaluacion;
+    }
 }
