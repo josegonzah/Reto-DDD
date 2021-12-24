@@ -1,15 +1,13 @@
-package co.com.sofka.Curso.values;
+package co.com.sofka.Estudiante.Values;
 
-import co.com.sofka.Estudiante.Values.NombreEstudiante;
-import co.com.sofka.domain.generic.Identity;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Nombre implements ValueObject<String> {
+public class NombreEstudiante implements ValueObject<String> {
     private final String value;
 
-    public Nombre(String value) {
+    public NombreEstudiante(String value) {
         this.value = value;
         if(this.value.length()<=3){
             throw new IllegalArgumentException("Nombre debe tener por lo menos 3 caracteres");
@@ -27,7 +25,7 @@ public class Nombre implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Nombre that = (Nombre) o;
+        NombreEstudiante that = (NombreEstudiante) o;
         return Objects.equals(value, that.value);
     }
 

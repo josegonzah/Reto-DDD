@@ -1,4 +1,17 @@
 package co.com.sofka.Estudiante.Values;
 
-public class NotaId {
+import co.com.sofka.domain.generic.Identity;
+
+public class NotaId extends Identity {
+    public NotaId(){
+
+    }
+
+    public NotaId(String id) {
+        super(id);
+    }
+
+    public static NotaId of(String id){
+        return new NotaId(id);
+    }
 }

@@ -18,16 +18,16 @@ import java.util.Optional;
 import java.util.Set;
 
 public class Estudiante extends AggregateEvent<EstudianteId> {
-    protected Nombre nombre;
+    protected NombreEstudiante nombreEstudiante;
     protected CursoId cursoId;
     protected EstadoCurso estadoCurso;
     protected HashSet<Insignia> insignias;
     protected HashSet<Meta> metas;
     protected HashSet<Nota> notas;
 
-    public Estudiante(EstudianteId entityId, Nombre nombre, CursoId cursoId, EstadoCurso estadoCurso, HashSet<Insignia> insignias, HashSet<Meta> metas, HashSet<Nota> notas) {
+    public Estudiante(EstudianteId entityId, NombreEstudiante nombreEstudiante, CursoId cursoId, EstadoCurso estadoCurso, HashSet<Insignia> insignias, HashSet<Meta> metas, HashSet<Nota> notas) {
         super(entityId);
-        this.nombre = nombre;
+        this.nombreEstudiante = nombreEstudiante;
         this.cursoId = cursoId;
         this.estadoCurso = estadoCurso;
         this.insignias = insignias;
@@ -74,6 +74,10 @@ public class Estudiante extends AggregateEvent<EstudianteId> {
         appendChange(new FeedbackNotaModificado(notaId, feedbackNota)).apply();
     }
 
+    public void modificarEstadoCursoEstudiante(EstudianteId estudianteId, EstadoCurso estadoCurso){
+        appendChange(new EstadoCursoEstudianteModificado(estudianteId, estadoCurso)).apply();
+    }
+
 
     public Optional<Insignia> getInsigniaPorId(InsigniaId insigniaId){
         return insignias
@@ -96,8 +100,8 @@ public class Estudiante extends AggregateEvent<EstudianteId> {
                 .findFirst();
     }
 
-    public Nombre nombre() {
-        return nombre;
+    public NombreEstudiante nombreEstudiante() {
+        return nombreEstudiante;
     }
 
     public CursoId cursoId() {
