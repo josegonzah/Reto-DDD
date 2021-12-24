@@ -11,13 +11,13 @@ import java.util.Optional;
 import java.util.Set;
 
 public class Curso  extends AggregateEvent<CursoId> {
-    protected ProfesorId profesorId;
+    protected Nombre profesorId;
     protected Titulo titulo;
     protected Descripcion descripcion;
     protected HashSet<Seccion> secciones;
     protected HashSet<Evaluacion> evaluaciones;
 
-    public Curso(CursoId entityId, ProfesorId profesorId, Titulo titulo, Descripcion descripcion) {
+    public Curso(CursoId entityId, Nombre profesorId, Titulo titulo, Descripcion descripcion) {
         super(entityId);
         this.profesorId = profesorId;
         this.titulo = titulo;
@@ -39,7 +39,7 @@ public class Curso  extends AggregateEvent<CursoId> {
         appendChange(new SeccionAgregada(seccionId, tituloSeccion, descripcionSeccion)).apply();
     }
 
-    public void crearProfesor(ProfesorId profesorId, NombreProfesor nombreProfesor){
+    public void crearProfesor(Nombre profesorId, NombreProfesor nombreProfesor){
         appendChange(new ProfesorCreado(profesorId, nombreProfesor)).apply();
     }
 
@@ -63,7 +63,7 @@ public class Curso  extends AggregateEvent<CursoId> {
         appendChange(new TemaEvaluacionModificado(evaluacionId, temaEvaluacion)).apply();
     }
 
-    public void modificarNombreProfesor(ProfesorId profesorId, NombreProfesor nombreProfesor){
+    public void modificarNombreProfesor(Nombre profesorId, NombreProfesor nombreProfesor){
         appendChange(new NombreProfesorModificado(profesorId, nombreProfesor)).apply();
     }
 
