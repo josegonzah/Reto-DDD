@@ -37,7 +37,7 @@ public class Estudiante extends AggregateEvent<EstudianteId> {
 
     private Estudiante(EstudianteId entityId) {
         super(entityId);
-        subscribe(new CursoChange(this));
+        subscribe(new EstudianteChange(this));
     }
 
     public static Estudiante from(EstudianteId estudianteId, List<DomainEvent> events) {
@@ -93,7 +93,7 @@ public class Estudiante extends AggregateEvent<EstudianteId> {
                 .findFirst();
     }
 
-    public Optional<Nota> NotaPorId(NotaId notaId){
+    public Optional<Nota> getNotaPorId(NotaId notaId){
         return notas
                 .stream()
                 .filter(evaluacion -> evaluacion.identity().equals(notaId))
