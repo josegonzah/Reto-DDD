@@ -82,21 +82,21 @@ public class Estudiante extends AggregateEvent<EstudianteId> {
     public Optional<Insignia> getInsigniaPorId(InsigniaId insigniaId){
         return insignias
                 .stream()
-                .filter(seccion -> seccion.identity().equals(insigniaId))
+                .filter(insignia -> insignia.identity().equals(insigniaId))
                 .findFirst();
     }
 
     public Optional<Meta> getMetaPorId(MetaId metaId){
         return metas
                 .stream()
-                .filter(evaluacion -> evaluacion.identity().equals(metaId))
+                .filter(meta -> meta.identity().equals(metaId))
                 .findFirst();
     }
 
     public Optional<Nota> getNotaPorId(NotaId notaId){
         return notas
                 .stream()
-                .filter(evaluacion -> evaluacion.identity().equals(notaId))
+                .filter(nota -> nota.identity().equals(notaId))
                 .findFirst();
     }
 

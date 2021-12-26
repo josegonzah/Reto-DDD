@@ -1,14 +1,13 @@
 package co.com.sofka.Certificacion.Values;
 
-import co.com.sofka.Estudiante.Values.NombreEstudiante;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class NombreHabilidad implements ValueObject<String> {
+public class NombreCompania implements ValueObject<String> {
     private final String value;
 
-    public NombreHabilidad(String value) {
+    public NombreCompania(String value) {
         this.value = value;
         if(this.value.length()<=3){
             throw new IllegalArgumentException("Nombre debe tener por lo menos 3 caracteres");
@@ -26,7 +25,7 @@ public class NombreHabilidad implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        NombreHabilidad that = (NombreHabilidad) o;
+        NombreCompania that = (NombreCompania) o;
         return Objects.equals(value, that.value);
     }
 
