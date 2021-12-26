@@ -8,6 +8,7 @@ import co.com.sofka.domain.Curso.values.CursoId;
 import co.com.sofka.domain.Estudiante.Values.EstudianteId;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.domain.generics.Events.NotificacionEnviada;
 
 import java.util.HashSet;
 import java.util.List;
@@ -41,6 +42,10 @@ public class Certificacion extends AggregateEvent<CertificacionId> {
         var certificacion = new Certificacion(certificacionId);
         events.forEach(certificacion::applyEvent);
         return certificacion;
+    }
+
+    public void notificarCertificacionExpedida(String mensaje){
+        appendChange(new NotificacionEnviada(mensaje)).apply();
     }
 
     public void crearCompañia(CompaniaQueLoExpideId companiaQueLoExpideId, NombreCompania nombreCompania){

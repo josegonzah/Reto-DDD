@@ -5,6 +5,7 @@ import co.com.sofka.domain.Estudiante.Values.*;
 import co.com.sofka.domain.Estudiante.events.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.domain.generics.Events.NotificacionEnviada;
 
 import java.util.HashSet;
 import java.util.List;
@@ -37,6 +38,10 @@ public class Estudiante extends AggregateEvent<EstudianteId> {
         var estudiante = new Estudiante(estudianteId);
         events.forEach(estudiante::applyEvent);
         return estudiante;
+    }
+
+    public void notificarEvaluada(String mensaje){
+        appendChange(new NotificacionEnviada(mensaje)).apply();
     }
 
     public void crearInsignia(InsigniaId insigniaId, RangoInsignia rangoInsignia, DescripcionInsignia descripcionInsignia){
