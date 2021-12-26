@@ -11,17 +11,17 @@ import java.util.Optional;
 import java.util.Set;
 
 public class Curso  extends AggregateEvent<CursoId> {
-    protected Nombre profesorId;
-    protected Titulo titulo;
-    protected Descripcion descripcion;
+    protected Profesor profesor;
+    protected TituloCurso tituloCurso;
+    protected DescripcionCurso descripcionCurso;
     protected HashSet<Seccion> secciones;
     protected HashSet<Evaluacion> evaluaciones;
 
-    public Curso(CursoId entityId, Nombre profesorId, Titulo titulo, Descripcion descripcion) {
+    public Curso(CursoId entityId, Profesor profesor, TituloCurso tituloCurso, DescripcionCurso descripcionCurso) {
         super(entityId);
-        this.profesorId = profesorId;
-        this.titulo = titulo;
-        this.descripcion = descripcion;
+        this.profesor = profesor;
+        this.tituloCurso = tituloCurso;
+        this.descripcionCurso = descripcionCurso;
     }
 
     private Curso(CursoId entityId) {
@@ -39,7 +39,7 @@ public class Curso  extends AggregateEvent<CursoId> {
         appendChange(new SeccionAgregada(seccionId, tituloSeccion, descripcionSeccion)).apply();
     }
 
-    public void crearProfesor(Nombre profesorId, NombreProfesor nombreProfesor){
+    public void crearProfesor(ProfesorId profesorId, NombreProfesor nombreProfesor){
         appendChange(new ProfesorCreado(profesorId, nombreProfesor)).apply();
     }
 
@@ -47,12 +47,12 @@ public class Curso  extends AggregateEvent<CursoId> {
         appendChange(new EvaluacionCreada(evaluacionId, temaEvaluacion, metricaEvaluacion)).apply();
     }
 
-    public void modificarTituloCurso(CursoId cursoId, Titulo titulo){
-        appendChange(new TituloCursoModificado(cursoId, titulo)).apply();
+    public void modificarTituloCurso(CursoId cursoId, TituloCurso tituloCurso){
+        appendChange(new TituloCursoModificado(cursoId, tituloCurso)).apply();
     }
 
-    public void modificarDescripcionCurso(CursoId cursoId, Descripcion descripcion){
-        appendChange(new DescripcionCursoModificada(cursoId, descripcion)).apply();
+    public void modificarDescripcionCurso(CursoId cursoId, DescripcionCurso descripcionCurso){
+        appendChange(new DescripcionCursoModificada(cursoId, descripcionCurso)).apply();
     }
 
     public void modificarMetricaEvaluacion(EvaluacionId evaluacionId, MetricaEvaluacion metricaEvaluacion){
@@ -63,7 +63,7 @@ public class Curso  extends AggregateEvent<CursoId> {
         appendChange(new TemaEvaluacionModificado(evaluacionId, temaEvaluacion)).apply();
     }
 
-    public void modificarNombreProfesor(Nombre profesorId, NombreProfesor nombreProfesor){
+    public void modificarNombreProfesor(ProfesorId profesorId, NombreProfesor nombreProfesor){
         appendChange(new NombreProfesorModificado(profesorId, nombreProfesor)).apply();
     }
 
@@ -89,12 +89,16 @@ public class Curso  extends AggregateEvent<CursoId> {
                 .findFirst();
     }
 
-    public Titulo Titulo() {
-        return titulo;
+    public Profesor getProfesor() {
+        return profesor;
     }
 
-    public Descripcion Descripcion() {
-        return descripcion;
+    public TituloCurso TituloCurso() {
+        return tituloCurso;
+    }
+
+    public DescripcionCurso Descripcion() {
+        return descripcionCurso;
     }
 
     public Set<Seccion> Secciones() {

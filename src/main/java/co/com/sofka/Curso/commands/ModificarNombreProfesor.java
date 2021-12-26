@@ -2,15 +2,15 @@ package co.com.sofka.Curso.commands;
 
 import co.com.sofka.Curso.values.CursoId;
 import co.com.sofka.Curso.values.NombreProfesor;
-import co.com.sofka.Curso.values.Nombre;
+import co.com.sofka.Curso.values.ProfesorId;
 import co.com.sofka.domain.generic.Command;
 
 public class ModificarNombreProfesor extends Command {
     private final CursoId cursoId;
-    private final Nombre profesorId;
+    private final ProfesorId profesorId;
     private final NombreProfesor nombreProfesor;
 
-    public ModificarNombreProfesor(CursoId cursoId, Nombre profesorId, NombreProfesor nombreProfesor) {
+    public ModificarNombreProfesor(CursoId cursoId, ProfesorId profesorId, NombreProfesor nombreProfesor) {
         this.cursoId = cursoId;
         this.profesorId = profesorId;
         this.nombreProfesor = nombreProfesor;
@@ -20,7 +20,7 @@ public class ModificarNombreProfesor extends Command {
         return cursoId;
     }
 
-    public Nombre getProfesorId() {
+    public ProfesorId getProfesorId() {
         return profesorId;
     }
 

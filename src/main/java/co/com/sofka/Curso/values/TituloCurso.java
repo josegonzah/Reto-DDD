@@ -4,16 +4,16 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Descripcion implements ValueObject<String> {
+public class TituloCurso implements ValueObject<String> {
     private final String value;
 
-    public Descripcion(String value) {
+    public TituloCurso(String value) {
         this.value = value;
-        if(this.value.length()<=50){
-            throw new IllegalArgumentException("Descripcion debe tener por lo menos 50 caracteres");
+        if(this.value.length()<=5){
+            throw new IllegalArgumentException("Titulo debe tener por lo menos 5 caracteres");
         }
-        if(this.value.length()>=1000){
-            throw new IllegalArgumentException("Descripcion debe tener maximo 1000 caracteres");
+        if(this.value.length()>=100){
+            throw new IllegalArgumentException("Titulo debe tener maximo 100 caracteres");
         }
     }
 
@@ -25,7 +25,7 @@ public class Descripcion implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Descripcion that = (Descripcion) o;
+        TituloCurso that = (TituloCurso) o;
         return Objects.equals(value, that.value);
     }
 
@@ -33,7 +33,4 @@ public class Descripcion implements ValueObject<String> {
     public int hashCode() {
         return Objects.hash(value);
     }
-
-
-
 }

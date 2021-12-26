@@ -4,14 +4,13 @@ import co.com.sofka.Curso.events.*;
 import co.com.sofka.domain.generic.EventChange;
 
 import java.util.HashSet;
-import java.util.Set;
 
 public class CursoChange extends EventChange {
     public CursoChange(Curso curso){
         apply((CursoCreado event)->{
-            curso.titulo = event.getTitulo();
-            curso.profesorId = event.getProfesorId();
-            curso.descripcion = event.getDescripcion();
+            curso.tituloCurso = event.getTitulo();
+            curso.profesor = event.getProfesor();
+            curso.descripcionCurso = event.getDescripcion();
             curso.secciones = new HashSet<>();
             curso.evaluaciones = new HashSet<>();
         });
@@ -33,15 +32,15 @@ public class CursoChange extends EventChange {
         });
 
         apply((ProfesorCreado event )->{
-            curso.profesorId = event.getProfesorId();
+            curso.profesor.nombreProfesor = event.getNombreProfesor();
         });
 
         apply((TituloCursoModificado event )->{
-            curso.titulo = event.getTitulo();
+            curso.tituloCurso = event.getTitulo();
         });
 
         apply((DescripcionCursoModificada event )->{
-            curso.descripcion = event.getDescripcion();
+            curso.descripcionCurso = event.getDescripcion();
         });
 
         apply((MetricaEvaluacionModificada event )->{

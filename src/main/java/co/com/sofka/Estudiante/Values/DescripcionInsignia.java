@@ -1,6 +1,5 @@
 package co.com.sofka.Estudiante.Values;
 
-import co.com.sofka.Curso.values.Descripcion;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;

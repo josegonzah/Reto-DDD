@@ -1,12 +1,6 @@
 package co.com.sofka.Estudiante;
 
-import co.com.sofka.Curso.Curso;
-import co.com.sofka.Curso.CursoChange;
-import co.com.sofka.Curso.Evaluacion;
-import co.com.sofka.Curso.Seccion;
-import co.com.sofka.Curso.events.*;
 import co.com.sofka.Curso.values.*;
-import co.com.sofka.Curso.values.Nombre;
 import co.com.sofka.Estudiante.Values.*;
 import co.com.sofka.Estudiante.events.*;
 import co.com.sofka.domain.generic.AggregateEvent;
@@ -15,7 +9,6 @@ import co.com.sofka.domain.generic.DomainEvent;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 public class Estudiante extends AggregateEvent<EstudianteId> {
     protected NombreEstudiante nombreEstudiante;

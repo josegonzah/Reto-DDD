@@ -1,25 +1,25 @@
 package co.com.sofka.Curso.events;
 
 import co.com.sofka.Curso.values.CursoId;
-import co.com.sofka.Curso.values.Titulo;
+import co.com.sofka.Curso.values.TituloCurso;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class TituloCursoModificado extends DomainEvent {
     private final CursoId cursoId;
-    private final Titulo titulo;
+    private final TituloCurso tituloCurso;
 
 
-    public TituloCursoModificado(CursoId cursoId, Titulo titulo) {
+    public TituloCursoModificado(CursoId cursoId, TituloCurso tituloCurso) {
         super("sofka.curso.titulocursomodificado");
         this.cursoId = cursoId;
-        this.titulo = titulo;
+        this.tituloCurso = tituloCurso;
     }
 
     public CursoId getCursoId() {
         return cursoId;
     }
 
-    public Titulo getTitulo() {
-        return titulo;
+    public TituloCurso getTitulo() {
+        return tituloCurso;
     }
 }

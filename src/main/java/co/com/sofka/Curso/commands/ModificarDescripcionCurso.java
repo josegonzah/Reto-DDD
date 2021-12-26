@@ -1,23 +1,23 @@
 package co.com.sofka.Curso.commands;
 
 import co.com.sofka.Curso.values.CursoId;
-import co.com.sofka.Curso.values.Descripcion;
+import co.com.sofka.Curso.values.DescripcionCurso;
 import co.com.sofka.domain.generic.Command;
 
 public class ModificarDescripcionCurso extends Command {
     private final CursoId cursoId;
-    private final Descripcion descripcion;
+    private final DescripcionCurso descripcionCurso;
 
-    public ModificarDescripcionCurso(CursoId cursoId, Descripcion descripcion) {
+    public ModificarDescripcionCurso(CursoId cursoId, DescripcionCurso descripcionCurso) {
         this.cursoId = cursoId;
-        this.descripcion = descripcion;
+        this.descripcionCurso = descripcionCurso;
     }
 
     public CursoId getCursoId() {
         return cursoId;
     }
 
-    public Descripcion getDescripcion() {
-        return descripcion;
+    public DescripcionCurso getDescripcion() {
+        return descripcionCurso;
     }
 }
