@@ -7,7 +7,7 @@ import co.com.sofka.domain.Certificacion.Certificacion;
 import co.com.sofka.domain.Certificacion.Values.CertificacionId;
 import co.com.sofka.domain.Certificacion.events.CertificacionCreada;
 
-public class notificarCertificacionExpedida extends UseCase<TriggeredEvent<CertificacionCreada>, ResponseEvents> {
+public class notificarCertificacionExpedidaUseCase extends UseCase<TriggeredEvent<CertificacionCreada>, ResponseEvents> {
     @Override
     public void executeUseCase(TriggeredEvent<CertificacionCreada> certificacionCreadaTriggeredEvent) {
         var event = certificacionCreadaTriggeredEvent.getDomainEvent();
