@@ -5,8 +5,6 @@ W
 mvnw,5\d\5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d
 8
 mvnw.cmd,1\f\1f1763f358c257ea3515417352b82b0165647ad1
-t
-Dsrc/main/java/co/com/sofka/domain/Curso/commands/AgregarSeccion.java,2\8\28a8db00f3984d24919d995e20c4634b8855ec8b
 x
 Hsrc/main/java/co/com/sofka/domain/Certificacion/CertificacionChange.java,f\e\fecc0d71405e024a2fa5dcf9ec6e3b2817b3444c
 
@@ -19,16 +17,12 @@ x
 Hsrc/main/java/co/com/sofka/domain/Certificacion/CompaniaQueLoExpide.java,7\1\715a1587cef863e57fdd009532cc1cd6207d1732
 
 Qsrc/main/java/co/com/sofka/domain/Certificacion/Values/CompaniaQueLoExpideId.java,c\a\ca7287300fc7ced5e34d7aacb86626f27bc6b82d
-€
-Psrc/main/java/co/com/sofka/domain/Certificacion/commands/CrearCertificacion.java,e\f\ef82eda06e9bbf5b767cfb7f6045c16ea7ddfde4
 {
 Ksrc/main/java/co/com/sofka/domain/Certificacion/commands/CrearCompania.java,4\f\4f26f3931954feb603c9b522ff95abd88410d8cf
 p
 @src/main/java/co/com/sofka/domain/Curso/commands/CrearCurso.java,0\9\0986baa275530302e054ac2c93214ae115095e2e
 z
 Jsrc/main/java/co/com/sofka/domain/Estudiante/commands/CrearEstudiante.java,1\d\1d4f886693979a2da8d7191f8d5ee51b8f10bfd6
-u
-Esrc/main/java/co/com/sofka/domain/Curso/commands/CrearEvaluacion.java,e\4\e46b421e66f2e77712e1f3cfed9b0f48f8025900
 n
 >src/main/java/co/com/sofka/usecase/crearEvaluacionUseCase.java,1\8\181fe2b64b83e1077b2852fe29c59c461f8fcec0
 |
@@ -47,10 +41,6 @@ h
 Psrc/main/java/co/com/sofka/domain/Certificacion/commands/CrearPosiblePuesto.java,1\0\10bea25dc1bdc8cff468c22d32be71cdaba7a9f8
 s
 Csrc/main/java/co/com/sofka/domain/Curso/commands/CrearProfesor.java,5\d\5df2b6ae9873d1a2ee6780ff2150a260d91ee55b
-r
-Bsrc/main/java/co/com/sofka/domain/Curso/commands/CrearSeccion.java,5\c\5c5b088f74b2e775b34767b166bfd66964846941
-k
-;src/main/java/co/com/sofka/usecase/crearSeccionUseCase.java,9\4\949b2c571d58e82421aa0ef0fe9889c920b2a87b
 b
 2src/main/java/co/com/sofka/domain/Curso/Curso.java,1\e\1e700036c85ae3a8f19ea94319bc145139ccd5a2
 h
@@ -59,8 +49,6 @@ o
 ?src/main/java/co/com/sofka/domain/Curso/events/CursoCreado.java,4\8\48f3f899be493f2a6a6c989edc32634a1158d84f
 k
 ;src/main/java/co/com/sofka/domain/Curso/values/CursoId.java,0\b\0beb32b50a163a715b3bb3c1377db5bb95d41b97
-„
-Tsrc/main/java/co/com/sofka/domain/Certificacion/Values/DescripcionCertificacion.java,4\4\44dcd937360ea4c2d003ad6ab002c1bf770fc4e2
 t
 Dsrc/main/java/co/com/sofka/domain/Curso/values/DescripcionCurso.java,0\e\0ec454b4efea0818b2b3cf3021d40fe60b22ee55
 ~
@@ -71,8 +59,6 @@ Psrc/main/java/co/com/sofka/domain/Certificacion/Values/DescripcionHabilidad.jav
 Lsrc/main/java/co/com/sofka/domain/Estudiante/Values/DescripcionInsignia.java,3\0\303c29140a5bc709672d43ad6d489c1d391366ef
 x
 Hsrc/main/java/co/com/sofka/domain/Estudiante/Values/DescripcionMeta.java,d\0\d096fc9a6c13aa69d5f6f14fb67b334a1746726d
-„
-Tsrc/main/java/co/com/sofka/domain/Certificacion/Values/DescripcionPosiblePuesto.java,4\4\4446899308e3e272bc6ecd3a5010b43ca37c7dc8
 v
 Fsrc/main/java/co/com/sofka/domain/Curso/values/DescripcionSeccion.java,9\8\9874018e918bbf19db927b2d080098990b63eae8
 €
@@ -93,8 +79,6 @@ u
 Esrc/main/java/co/com/sofka/domain/Estudiante/Values/EstudianteId.java,e\d\edf16baaaa316d805578b7c78602961ce48ec9ff
 g
 7src/main/java/co/com/sofka/domain/Curso/Evaluacion.java,c\a\cad8928e056d9be39186d6ed4b0cc585be79a51c
-t
-Dsrc/main/java/co/com/sofka/domain/Curso/events/EvaluacionCreada.java,d\8\d8eed2706a729f4a34c6cb40cdf5fad437b918e5
 p
 @src/main/java/co/com/sofka/domain/Curso/values/EvaluacionId.java,8\8\88f55878fc0987879419a07c97a4667682f3b43c
 u
@@ -211,5 +195,3 @@ s
 Csrc/main/java/co/com/sofka/usecase/modificarEstadoCursoUseCase.java,6\3\63eaf35508ca13ccc25e76c885cc4a01f1d35631
 {
 Ksrc/main/java/co/com/sofka/usecase/modificarDescripcionInsigniaUseCase.java,e\0\e06ddc90698423e332ec00c8bc1567bc929aac55
-j
-:src/main/java/co/com/sofka/usecase/evaluarNotaUseCase.java,e\3\e30e73705c78a54b563df42d29ee4f61e363ba50
