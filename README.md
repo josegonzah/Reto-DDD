@@ -6,3 +6,4 @@ por lo que una regla de negocio es que el usuario solo puede estar cursando un c
 notas, el estado del curso, el id del curso, y datos basicos. Tensmos otro agregado Curso con el contenido, el profesor, evaluaciones y secciones. Y el agregado Certificacion con
 la informacion de la certificacion, como a quien le pertenece, habilidades, posibles puestos que abre, compañia que lo expide entre otros datos </p>
 <p> Este es un overview del dominio para entender el codigo </p>
+<p> Mas informacion aca: https://drive.google.com/file/d/1czELPfM4ZjSj47F8yUkATDQaTZpgI9Qj/view?usp=sharing </p>
